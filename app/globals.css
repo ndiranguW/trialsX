@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-default: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-default: #252b30;
+  }
+}
+[data-theme="dark"] {
+  --color-default: #252b30;
+  color: #fff;
+}
+[data-theme="light"] {
+  --color-default: #e7f9ff;
+}
+body {
+  background-color: var(--color-default);
+}
