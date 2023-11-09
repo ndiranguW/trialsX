@@ -5,17 +5,17 @@ import { themeChange } from "theme-change";
 const ThemeToggle = () => {
   const [theme, setTheme] = useState("theme");
 
-  function saveThemeToLocalStorage(selectedTheme:string) {
+  const saveThemeToLocalStorage = (selectedTheme: string) => {
     localStorage.setItem("theme", selectedTheme);
-  }
+  };
 
-  function getThemeFromLocalStorage() {
+  const getThemeFromLocalStorage = () => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       setTheme(savedTheme);
       themeChange(savedTheme === "dark");
     }
-  }
+  };
 
   useEffect(() => {
     getThemeFromLocalStorage();
