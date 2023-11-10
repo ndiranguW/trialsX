@@ -13,7 +13,7 @@ const ThemeToggle = () => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       setTheme(savedTheme);
-      themeChange(savedTheme === "dark");
+      themeChange(savedTheme === "theme");
     }
   };
 
