@@ -60,7 +60,7 @@ const Navbar = () => {
               <ul className="menu menu-horizontal">
                 {/* Navbar menu content here */}
                 {navData.map((link, index) => (
-                  <li key={index}>
+                  <li key={index} className="px-1">
                     <Link href={link.path}>
                       {link.icon}
                       {link.name}
