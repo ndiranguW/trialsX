@@ -1,6 +1,8 @@
 "use client";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { DoubleArrowUpIcon, DoubleArrowDownIcon } from "@radix-ui/react-icons";
+import { toggleCollapsible } from "../redux/features/collapsibleSlice";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
 
 interface Props {
   children: ReactNode;
@@ -9,18 +11,25 @@ interface Props {
 }
 
 const Collapsible = ({ children, title, className }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
+  const isOpen = useAppSelector((state) => state.collapsibleReducer.isOpen);
+  const dispatch = useAppDispatch();
 
   const handleToggle = () => {
-    setIsOpen(!isOpen);
+    // setIsOpen(!isOpen);
+    dispatch(toggleCollapsible());
   };
+
+  // TODO: create hotkey combo for opening contact section
+  // fetch the initial state 
+  // dispatch actions for state of the collapsible
 
   return (
     <>
-      <div className={`mt-2 bg-base-200 ${className}`}>
+      <div className={`mt-2 bg-base-200 ${className}`} tabIndex={0}>
         <p>{title}</p>
-        <div className="text-center">
-          <button className="btn btn-sm" onClick={handleToggle}>
+        <div className="lg:tooltip" data-tip="Get in Touch">
+          <button className="btn btn-sm btn-circle" onClick={handleToggle}>
             {!isOpen ? <DoubleArrowUpIcon /> : <DoubleArrowDownIcon />}
           </button>
         </div>
