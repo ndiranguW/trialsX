@@ -1,4 +1,5 @@
-import { BreadCrumb, Container } from "./components";
+"use client";
+import { Container } from "./components";
 
 export default function Home() {
   return (
