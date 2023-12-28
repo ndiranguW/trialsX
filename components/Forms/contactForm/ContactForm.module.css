@@ -1,0 +1,13 @@
+.inputField {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 7px 0;
+  background: transparent;
+}
+
+.inputField::placeholder {
+  font-size: 0.8rem;
+  font-style: italic;
+  /* font-weight: light; */
+}
