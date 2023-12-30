@@ -31,7 +31,7 @@ const socialLinks: socialLinksProps[] = [
 export default function Home() {
   return (
     <>
-      <Container>
+      <Container className="md:mt-24">
         <div>
           <p className="text-sm">Hi, I&apos;m</p>
           <p className="text-2xl md:text-5xl font-bold text-gray-500">
