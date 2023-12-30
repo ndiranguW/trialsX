@@ -1,11 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Providers } from "./redux/provider";
-import { Navbar, Collapsible, ContactForm } from "./components";
+import { Collapsible, ContactForm, Nav } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Portfolio website for billy dev.",
+  title: "Willbeckh | Portfolio",
+  description: "Portfolio website for Willbeck.",
 };
 
 export default function RootLayout({
@@ -14,12 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="scroll-smooth">
+    <html lang="en">
+      <body className="scroll-smooth h-auto">
         <Providers>
-          <Navbar />
+          <Nav />
           {children}
-          <Collapsible className="sticky bottom-0 text-center">
+          <Collapsible className="fixed bottom-0 text-center w-screen">
             <ContactForm />
           </Collapsible>
         </Providers>
