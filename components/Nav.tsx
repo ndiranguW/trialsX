@@ -32,9 +32,9 @@ const Nav = () => {
   };
 
   return (
-    <div className="navbar flex sticky top-2 bg-base-300 shadow-xl w-11/12 md:w-5/6 mx-auto rounded-xl">
-      <div className="px-2 mx-2 font-bold text-lg md:text-2xl flex-1">
-        <Link href="/" className="pe-4">
+    <div className="navbar flex sticky top-2 bg-base-300 shadow-xl w-11/12 md:w-5/6 mx-auto rounded-lg">
+      <div className="ps-2 md:ps-3 font-bold text-md md:text-2xl flex-1">
+        <Link href="/" className="pe-3">
           billy_dev
         </Link>
         <ThemeToggle />
@@ -63,10 +63,9 @@ const Nav = () => {
             onClick={handleClick}
           >
             {!showDropMenu ? (
-              // TODO:add animation for menu-icon transition && drop menu
-              <TextAlignLeftIcon />
+              <TextAlignLeftIcon width={20} height={20} />
             ) : (
-              <Cross1Icon />
+              <Cross1Icon width={20} height={20} />
             )}
           </div>
 
@@ -88,7 +87,7 @@ const Nav = () => {
                     </Link>
                   </motion.li>
                 ))}
-                <div className="ps-4 mt-4">
+                <div className="ps-4 mt-4 text-base-content">
                   &copy;{new Date().getFullYear()}
                 </div>
               </ul>
