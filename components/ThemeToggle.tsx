@@ -3,20 +3,48 @@ import { useEffect, useState } from "react";
 import { themeChange } from "theme-change";
 
 const ThemeToggle = () => {
+  const [theme, setTheme] = useState("theme");
+
+  // save selected theme to local storage
+  const saveThemeToLocalStorage = (selectedTheme: string) => {
+    localStorage.setItem("theme", selectedTheme);
+  };
+
+  // retrieves theme from local stroage on page load
+  const getThemeFromLocalStorage = () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+      themeChange(savedTheme === "theme");
+    }
+  };
+
   useEffect(() => {
-    themeChange(false);
+    getThemeFromLocalStorage();
   }, []);
+
+  const handleThemeChange = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    saveThemeToLocalStorage(newTheme);
+    themeChange(newTheme === "dark");
+  };
 
   return (
     <>
-      <label className="swap swap-rotate p-1">
+      <label className="swap swap-flip py-2">
         {/* this hidden checkbox controls the state */}
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          checked={theme === "dark"}
+          onChange={handleThemeChange}
+          value={theme}
+        />
 
         {/* moon icon */}
         <svg
-          data-set-theme="light"
-          className="swap-on fill-current w-6 h-6"
+          data-set-theme="dark"
+          className="swap-off fill-current w-6 h-6"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -25,9 +53,8 @@ const ThemeToggle = () => {
 
         {/* sun icon */}
         <svg
-          data-set-theme="dark"
-          data-key="theme"
-          className="swap-off fill-current w-6 h-6"
+          data-set-theme="light"
+          className="swap-on fill-current w-6 h-6"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >

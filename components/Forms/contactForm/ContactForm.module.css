@@ -5,3 +5,9 @@
   padding: 7px 0;
   background: transparent;
 }
+
+.inputField::placeholder {
+  font-size: 0.8rem;
+  font-style: italic;
+  /* font-weight: light; */
+}

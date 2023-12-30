@@ -6,7 +6,11 @@ interface ContainerProps {
 }
 
 const Container = ({ children, className }: ContainerProps) => {
-  return <div className={`min-h-screen p-7 mx-auto container ${className}`}>{children}</div>;
+  return (
+    <div className={`p-6 w-screen md:w-5/6 mx-auto md:mt-5 mb-10 ${className}`}>
+      {children}
+    </div>
+  );
 };
 
 export default Container;

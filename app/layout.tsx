@@ -1,10 +1,11 @@
 import "./globals.css";
-import { Navbar, Collapsible, ContactForm } from "./components";
 import type { Metadata } from "next";
+import { Providers } from "./redux/provider";
+import { Collapsible, ContactForm, Nav } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Portfolio website for billy dev.",
+  title: "Willbeckh | Portfolio",
+  description: "Portfolio website for Willbeck.",
 };
 
 export default function RootLayout({
@@ -14,14 +15,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="scroll-smooth">
-        <div>
-          <Navbar />
+      <body className="scroll-smooth h-auto">
+        <Providers>
+          <Nav />
           {children}
-          <Collapsible className="sticky bottom-0">
+          <Collapsible className="fixed bottom-0 text-center w-screen">
             <ContactForm />
           </Collapsible>
-        </div>
+        </Providers>
       </body>
     </html>
   );

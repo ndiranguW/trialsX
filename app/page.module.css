@@ -1,0 +1,16 @@
+.bottomNav::after {
+  content: "";
+  display: block;
+  width: 45%;
+  border-bottom: 2px solid #00ffff;
+  color: #78c8f7af;
+}
+
+.grid {
+  height: 26rem;
+  width: 100vw;
+  background-image: linear-gradient(to right, #525353d7, transparent 1px),
+    linear-gradient(to bottom, #525353d7, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  background-position: center center;
+}
