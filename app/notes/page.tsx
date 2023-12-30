@@ -1,9 +1,9 @@
-import { BreadCrumb, Container } from "../components";
+import { Container } from "@/components";
 
 export default function Post() {
   return (
     <>
-      <Container className="">
+      <Container className="h-fit w-screen">
         <div>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores
