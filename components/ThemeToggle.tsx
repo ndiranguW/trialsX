@@ -38,6 +38,7 @@ const ThemeToggle = () => {
           type="checkbox"
           checked={theme === "dark"}
           onChange={handleThemeChange}
+          value={theme}
         />
 
         {/* moon icon */}
