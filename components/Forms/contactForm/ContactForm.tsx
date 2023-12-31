@@ -65,7 +65,7 @@ const ContactForm: FC = () => {
             </label>
           </div>
 
-          <div className="px-2">
+          <div className="px-2 md:w-2/4">
             <input
               type="email"
               className={styles.inputField}
@@ -117,7 +117,7 @@ const ContactForm: FC = () => {
                 className={`${styles.inputField} h-auto`}
                 placeholder="message..."
                 {...register("message", {
-                  required:true,
+                  required: true,
                   minLength: 4,
                 })}
               />
