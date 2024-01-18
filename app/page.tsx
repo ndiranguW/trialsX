@@ -2,7 +2,6 @@
 import { Container } from "@/components";
 import Link from "next/link";
 import styles from "./page.module.css";
-import About from "./about/page";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 
 type socialLinksProps = {
@@ -73,7 +72,6 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      <About />
       {/* background grid: top & bottom */}
       <div className="fixed top-0 -z-10">
         <div
