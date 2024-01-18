@@ -23,6 +23,9 @@
   border-radius: 8px;
 }
 
+::-webkit-scrollbar:hover{
+  width: 2px;
+}
 /* scroll end */
 
 [data-theme="dark"] {
