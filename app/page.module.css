@@ -9,8 +9,8 @@
 .grid {
   height: 26rem;
   width: 100vw;
-  background-image: linear-gradient(to right, #525353d7, transparent 1px),
-    linear-gradient(to bottom, #525353d7, transparent 1px);
+  background-image: linear-gradient(to right, #52535398, transparent 1px),
+    linear-gradient(to bottom, #52535398, transparent 1px);
   background-size: 2.5rem 2.5rem;
   background-position: center center;
 }

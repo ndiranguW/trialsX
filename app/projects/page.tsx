@@ -3,9 +3,13 @@ import { Container } from "@/components";
 const ProjectPage = () => {
   return (
     <>
-      <Container className="w w-full">
+      <Container className="flex justify-center">
         {/* consume github repo api */}
-        <div className="">ProjectPage</div>
+        <span>Incoming.</span>
+        <div className="loading loading-ball"></div>
+        <div className="loading loading-ball"></div>
+        <div className="loading loading-ball"></div>
+        <div className="loading loading-ball"></div>
       </Container>
     </>
   );

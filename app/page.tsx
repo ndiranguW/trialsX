@@ -2,11 +2,8 @@
 import { Container } from "@/components";
 import Link from "next/link";
 import styles from "./page.module.css";
-import {
-  TwitterLogoIcon,
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-} from "@radix-ui/react-icons";
+import About from "./about/page";
+import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 
 type socialLinksProps = {
   path: string;
@@ -14,10 +11,6 @@ type socialLinksProps = {
 };
 
 const socialLinks: socialLinksProps[] = [
-  {
-    path: "https://twitter.com/billyndirangu",
-    icon: <TwitterLogoIcon width={20} height={24} />,
-  },
   {
     path: "https://github.com/Willbeckh",
     icon: <GitHubLogoIcon width={20} height={24} />,
@@ -31,32 +24,26 @@ const socialLinks: socialLinksProps[] = [
 export default function Home() {
   return (
     <>
-      <Container className="md:mt-24">
+      <Container>
         <div>
           <p className="text-sm">Hi, I&apos;m</p>
-          <p className="text-2xl md:text-5xl font-bold text-gray-500">
-            Willbeckh!
+          <p className="text-2xl md:text-5xl font-bold">Willbeckh!</p>
+          <p className="text-sm text-base-content lowercase font-extralight hidden md:block">
+            Welcome to my corner of the web🕸️
           </p>
+
           <p className="text-2xl md:text-6xl font-bold mt-4 md:mt-8">
             I build products for the web.
           </p>
         </div>
-
         <div className="pt-4 md:w-4/5 ">
           <p className="font-thin text-base-content ">
             Specifically building back-end solutions && occasionally creating
-            front-end experiences. Currently I am building for construction-tech{" "}
-            <a
-              href="https://weigo.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="text-cyan-400 font-normal">@weigo.io</span>.
-            </a>
+            front-end experiences.
           </p>
         </div>
 
-        <div className={`mt-16 relative`}>
+        <div className={`mt-16`}>
           <div>
             <div className="w-36 md:w-fit">
               <Link
@@ -67,7 +54,8 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="md:w-36 text-xl text-base-content pt-8">
+            {/* social icons */}
+            <div className="w-24 text-xl text-base-content pt-8">
               <ul className="flex justify-between">
                 {socialLinks.map((link, index) => (
                   <li key={index}>
@@ -85,9 +73,11 @@ export default function Home() {
           </div>
         </div>
       </Container>
+      <About />
+      {/* background grid: top & bottom */}
       <div className="fixed top-0 -z-10">
         <div
-          className={`${styles.grid} [mask-image:radial-gradient(ellipse_20%_20%_at_0%_20%,#000_50%,transparent_100%)]`}
+          className={`${styles.grid} [mask-image:radial-gradient(ellipse_10%_60%_at_0%_0%,#f00_80%,transparent_100%)]`}
         ></div>
       </div>
       <div className="fixed bottom-0 -z-10">
