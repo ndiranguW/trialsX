@@ -32,7 +32,7 @@ const Nav = () => {
   };
 
   return (
-    <div className="navbar flex sticky top-2 bg-base-300 shadow-xl w-11/12 md:w-5/6 mx-auto rounded-lg">
+    <div className="navbar sticky top-2 bg-base-300 shadow-xl w-11/12 md:w-5/6 mx-auto rounded-lg">
       <div className="ps-2 md:ps-3 font-bold text-md md:text-2xl flex-1">
         <Link href="/" className="pe-3">
           billy_dev
@@ -70,14 +70,10 @@ const Nav = () => {
           </div>
 
           {showDropMenu && (
-            <motion.div
-              animate={{ y: 5 }}
-              transition={{ ease: "linear" }}
-              exit={{}}
-            >
+            <motion.div transition={{ ease: "linear" }} exit={{}}>
               <ul
                 tabIndex={0}
-                className="menu dropdown-content mt-1 p-2 shadow-md font-semibold bg-base-200 rounded w-52"
+                className="menu dropdown-content mt-1 p-2 shadow-md font-semibold bg-base-200 rounded"
               >
                 {navLinks.map((link, index) => (
                   <motion.li key={index} whileTap={{ scale: 0.6 }}>
